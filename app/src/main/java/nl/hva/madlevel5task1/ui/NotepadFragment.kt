@@ -16,6 +16,7 @@ import nl.hva.madlevel5task1.vm.NoteViewModel
 class NotepadFragment : Fragment() {
 
     private var _binding: FragmentNotepadBinding? = null
+    private val viewModel: NoteViewModel by viewModels()
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -34,9 +35,17 @@ class NotepadFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        binding.buttonFirst.setOnClickListener {
-//            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-//        }
+        observeAddNoteResult()
+    }
+
+    private fun observeAddNoteResult() {
+        viewModel.note.observe(viewLifecycleOwner, { note ->
+            note?.let {
+                binding.tvNoteTitle.text = it.title
+                binding.tvLastUpdated.text = getString(R.string.last_updated, it.lastUpdated.toString())
+                binding.tvNoteText.text = it.text
+            }
+        })
     }
 
     override fun onDestroyView() {
