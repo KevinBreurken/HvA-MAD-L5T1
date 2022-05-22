@@ -8,12 +8,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Madlevel5task1">
+        android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
+            android:name="nl.hva.madlevel5task1.ui.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Madlevel5task1.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

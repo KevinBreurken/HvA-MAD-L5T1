@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NotepadFragment">
+    tools:context="nl.hva.madlevel5task1.ui.NotepadFragment">
 
     <TextView
         android:id="@+id/tvTitleNotepad"
